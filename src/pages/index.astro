@@ -1,5 +1,6 @@
 ---
 import "../styles/index.css";
+import Background from '../components/Background.svelte';
 ---
 
 <html lang="en">
@@ -9,7 +10,8 @@ import "../styles/index.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>mimi website</title>
 	</head>
-	<body class="bg-gray-500">
+	<body class="bg-white">
+		<Background client:only />
 		<div class="flex items-center justify-center">
 			<div class="w-3/4 bg-white">
 				<!-- title bar -->
