@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.font-\[Gohu\] {
+    filter: contrast(1);
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: Gohu;
+    src: url(/gohufont.woff2) format('woff2');
+}
+
+.console-border {
+    box-shadow:
+        0 0 0 2px black inset,
+        0 0 0 3px white inset,
+        0 0 0 5px black inset;
+    padding: 4px 25.1% 5px 5px;
+    margin-top: -5px;
+    clip-path: inset(5px 0 0 0);
+}
