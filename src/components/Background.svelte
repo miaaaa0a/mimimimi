@@ -8,14 +8,16 @@
         let ctx = canvas.getContext("2d");
         
         let patternCanvas = document.createElement('canvas');
-        patternCanvas.width = 2;
-        patternCanvas.height = 2;
+        patternCanvas.width = 4;
+        patternCanvas.height = 4;
         let pCtx = patternCanvas.getContext('2d');
         
-        pCtx.fillStyle = 'white';
-        pCtx.fillRect(0, 0, 2, 2);
         pCtx.fillStyle = 'black';
-        pCtx.fillRect(0, 1, 1, 1);
+        pCtx.fillRect(0, 0, 1, 2);
+        pCtx.fillRect(2, 2, 1, 2);
+        pCtx.fillStyle = 'white';
+        pCtx.fillRect(1, 0, 1, 2);
+        pCtx.fillRect(3, 2, 1, 2);
         
         let pattern = ctx.createPattern(patternCanvas, 'repeat');
         ctx.fillStyle = pattern;
