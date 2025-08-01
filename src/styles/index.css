@@ -5,6 +5,12 @@
     font-size: 14px;
 }
 
+p {
+    transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    will-change: transform;
+}
+
 @font-face {
     font-family: Gohu;
     src: url(/gohufont.woff2) format('woff2');
