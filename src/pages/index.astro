@@ -1,6 +1,7 @@
 ---
 import "../styles/index.css";
 import Background from '../components/Background.svelte';
+import LastFM from '../components/LastFM.svelte';
 ---
 
 <html lang="en">
@@ -12,17 +13,18 @@ import Background from '../components/Background.svelte';
 	</head>
 	<body class="bg-white">
 		<Background client:only />
+		<!-- about me -->
 		<div class="flex items-center justify-center p-5">
 			<div class="w-3/4 bg-white">
 				<!-- title bar -->
 				<div class="h-5 bg-black">
-					<p class="text-white font-[Gohu]">
+					<p class="text-white font-[Cozette]">
 						&lt;&lt; WEBSITE &gt;&gt;
 					</p>
 				</div>
 
 				<!-- content div -->
-				<div class="console-border text-black font-[Gohu] leading-none">
+				<div class="console-border text-black font-[Cozette] leading-none">
 					<p class="pb-3">
 						Reformatting page. Wait... done
 					</p>
@@ -48,7 +50,7 @@ import Background from '../components/Background.svelte';
 					<p class="pl-10 pb-3">Report any issues with Mia AI to its' creator: <a class="underline" href="https://github.com/sudocode1">&lt;https://github.com/sudocode1&gt;</a></p>
 
 					<p>SEE ALSO</p>
-					<p class="pl-10 pb-3">the tabs on the right???? Stupid</p>
+					<p class="pl-10 pb-3">scroll? down???&nbsp;&nbsp;&nbsp;Stupid</p>
 
 					<div class="flex justify-between">
 						<p>GNU ognamognam 6.7</p>
@@ -58,5 +60,42 @@ import Background from '../components/Background.svelte';
 				</div>
 			</div>
 		</div>
+
+		<!-- socials -->
+		<div class="flex items-center justify-center p-5">
+			<div class="w-3/4 bg-white">
+				<!-- title bar -->
+				<div class="h-5 bg-black">
+					<p class="text-white font-[Cozette]">
+						&lt;&lt; SOCIALS &gt;&gt;
+					</p>
+				</div>
+
+				<!-- content div -->
+				<div class="console-border text-black font-[Cozette] leading-none">
+					<p class="pb-3">
+						root# socials
+					</p>
+					<p class="pb-3">
+						<span class="bg-black text-white">discord</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miaaaa0a
+					</p>
+					<p class="pb-3">
+						<span class="bg-black text-white">twitter</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/miaaaa0a" class="underline">miaaaa0a</a>
+					</p>
+					<p class="pb-3">
+						<span class="bg-black text-white">soundcloud</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://soundcloud.com/miaaaa0a" class="underline">miaaaa0a</a>
+					</p>
+					<p class="pb-3">
+						<span class="bg-black text-white">github</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/miaaaa0a" class="underline">miaaaa0a</a>
+					</p>
+					<p class="pb-3">
+						<span class="bg-black text-white">steam</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://steamcommunity.com/id/evilpawjob" class="underline">evilpawjob</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- last.fm -->
+		<LastFM client:only />
 	</body>
 </html>

@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
+  - canvas
   - esbuild
+  - lwip2
   - sharp

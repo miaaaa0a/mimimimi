@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-.font-\[Gohu\] {
+.font-\[Cozette\] {
     filter: contrast(1);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 p {
@@ -12,8 +12,8 @@ p {
 }
 
 @font-face {
-    font-family: Gohu;
-    src: url(/gohufont.woff2) format('woff2');
+    font-family: Cozette;
+    src: url(/CozetteVector.woff2) format('woff2');
 }
 
 .console-border {
