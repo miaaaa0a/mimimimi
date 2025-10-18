@@ -21,7 +21,7 @@ export default function toAscii(url, el) {
         let line = "";
 
         // https://stackoverflow.com/a/67780964
-        let chars = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ";
+        let chars = " .,:iгl1owжWЖ";
 
         for (var i = 0; i < pixels.length; i += 4) {
             if (i % (width*4) == 0) {
@@ -29,7 +29,7 @@ export default function toAscii(url, el) {
                 line = "";
             }
             let lightness = parseInt(pixels[i]*.299 + pixels[i + 1]*.587 + pixels[i + 2]*.114);
-            let percentage = lightness * 100 / 255;
+            let percentage = 100 - (lightness * 100 / 255);
             let index = Math.ceil(percentage * (chars.length-1) / 100);
             console.log(index)
             let c = chars[index].replace("<", "&lt;").replace(">", "&gt;").replace(" ", "&nbsp;");
