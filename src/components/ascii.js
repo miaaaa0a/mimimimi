@@ -32,7 +32,7 @@ export default function toAscii(url, el) {
             let percentage = lightness * 100 / 255;
             let index = Math.ceil(percentage * (chars.length-1) / 100);
             console.log(index)
-            let c = chars[index].replace("<", "&lt;").replace(">", "&gt;");
+            let c = chars[index].replace("<", "&lt;").replace(">", "&gt;").replace(" ", "&nbsp;");
             line += c;
         }
 
