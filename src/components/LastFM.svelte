@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import toAscii from './ascii.js';
 
     let response = $state({
         now_playing: {
@@ -38,8 +39,7 @@
             songTitle = response.now_playing.name;
             songArtist = response.now_playing.artist.name;
             let coverUrl = response.now_playing.image.at(-1).url;
-            //console.log(coverUrl);
-            //toAscii(coverUrl);
+            toAscii(coverUrl, cover);
         })
         .catch(function (error) {
             console.error('error during api request: ', error);
@@ -47,10 +47,6 @@
         }).finally(() => {
             scrobbles.style = "";
         });
-    }
-
-    async function toAscii(url) {
-
     }
 
     onMount(() => {
@@ -71,26 +67,30 @@
 
 		<!-- content div -->
 		<div class="console-border text-black font-[Cozette] leading-none" bind:this={scrobbles}>
-            <p bind:this={cover}></p>
-            <p>===</p>
-            <div>
-                <p class="font-bold">{songTitle}</p>
-                <p>
-                    <span class="bg-black text-white font-bold">{songArtist}</span>
-                </p>
-                <p>{scrobbleDate}</p>
-                <p>===</p>
+            <div class="flex flex-row">
+                <p bind:this={cover}></p>
+                <div>
+                    <p>===</p>
+                    <div>
+                        <p class="font-bold">{songTitle}</p>
+                        <p>
+                            <span class="bg-black text-white font-bold">{songArtist}</span>
+                        </p>
+                        <p>{scrobbleDate}</p>
+                        <p>===</p>
+                    </div>
+                    {#each response.scrobbles as s}
+                    <div>
+                        <p>{s.name}</p>
+                        <p>
+                            <span class="bg-black text-white">{s.artist.name}</span>
+                        </p>
+                        <p>{s.dateAdded}</p>
+                        <p>===</p>
+                    </div>
+                    {/each}
+                </div>
             </div>
-            {#each response.scrobbles as s}
-            <div>
-                <p>{s.name}</p>
-                <p>
-                    <span class="bg-black text-white">{s.artist.name}</span>
-                </p>
-                <p>{s.dateAdded}</p>
-                <p>===</p>
-            </div>
-            {/each}
         </div>
     </div>
 </div>
