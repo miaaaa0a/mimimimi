@@ -67,8 +67,8 @@
 
 		<!-- content div -->
 		<div class="console-border text-black font-[Cozette] leading-none" bind:this={scrobbles}>
-            <div class="flex flex-row">
-                <p bind:this={cover}></p>
+            <div class="lfm">
+                <p class="text-nowrap" bind:this={cover}></p>
                 <div>
                     <p>===</p>
                     <div>
