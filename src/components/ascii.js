@@ -9,18 +9,16 @@ export default function toAscii(url, el) {
     canvas.style.display = 'none';
     var ctx = canvas.getContext("2d");
 
-    // load le image
     img.onload = () => {
         const width = 44;
         const height = 22;
+
         ctx.drawImage(img, 0, 0, width, height);
-        // convert le image to le grayscale
         let data = ctx.getImageData(0, 0, width, height);
         let pixels = data.data;
+
         let lines = [];
         let line = "";
-
-        // https://stackoverflow.com/a/67780964
         let chars = " .,:iгl1owжWЖ";
 
         for (var i = 0; i < pixels.length; i += 4) {
@@ -28,20 +26,16 @@ export default function toAscii(url, el) {
                 lines.push(line);
                 line = "";
             }
+
             let lightness = parseInt(pixels[i]*.299 + pixels[i + 1]*.587 + pixels[i + 2]*.114);
-            let percentage = 100 - (lightness * 100 / 255);
-            let index = Math.ceil(percentage * (chars.length-1) / 100);
-            console.log(index)
-            let c = chars[index].replace("<", "&lt;").replace(">", "&gt;").replace(" ", "&nbsp;");
+            let index = Math.ceil(
+                (255 - lightness) * (chars.length-1) / 255
+            );
+            let c = chars[index].replace(" ", "&nbsp;");
             line += c;
         }
 
-        // Fuckery
-        let hteemeel = "";
-        lines.shift();
-        lines.forEach((i) => {
-            hteemeel += `<p>${i}&nbsp;</p>`;
-        });
-        el.innerHTML = hteemeel;
+        el.innerHTML = lines.slice(1).map(i => `<p>${i}&nbsp;</p>`).join('');
+        canvas.remove();
     };
 }

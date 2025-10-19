@@ -38,9 +38,8 @@
 
             songTitle = response.now_playing.name;
             songArtist = response.now_playing.artist.name;
-            if (response.now_playing.dateAdded) {
-                scrobbleDate = response.now_playing.dateAdded;
-            }
+            scrobbleDate ||= response.now_playing.dateAdded;
+            
             let coverUrl = response.now_playing.image.at(-1).url;
             toAscii(coverUrl, cover);
         })
