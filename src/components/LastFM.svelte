@@ -74,9 +74,9 @@
                 <div>
                     <p>===</p>
                     <div>
-                        <p class="font-bold">{songTitle}</p>
+                        <p class="bolder">{songTitle}</p>
                         <p>
-                            <span class="bg-black text-white font-bold">{songArtist}</span>
+                            <span class="bg-black text-white bolder">{songArtist}</span>
                         </p>
                         <p>{scrobbleDate}</p>
                         <p>===</p>

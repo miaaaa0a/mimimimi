@@ -11,6 +11,11 @@ p {
     will-change: transform;
 }
 
+.bolder {
+    text-shadow: 1px 0 0 currentColor;
+    padding: 0 1px 0 0;
+}
+
 @font-face {
     font-family: Cozette;
     src: url(/CozetteVector.woff2) format('woff2');
